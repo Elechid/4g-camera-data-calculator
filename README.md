@@ -13,3 +13,7 @@ Each stream uses **minutes/day × Mbps × 60 × cameras × days ÷ 8,000** in de
 Inputs stay in the browser. Serve locally with `python3 -m http.server` and test with `node calculator.test.mjs`. [MIT licence](LICENSE).
 
 [Elechid 香港 4G 攝影機及 SIM 指南](https://elechid.com/blogs/news/4g-camera-data-usage-sim-hong-kong) · [English guide](https://elechid.com/en/blogs/news/4g-camera-data-usage-sim-hong-kong)
+
+## Mobile preview｜手機預覽
+
+<img src="mobile-preview.jpg" width="375" alt="Traditional Chinese calculator on mobile / 繁體中文計算器手機畫面">
