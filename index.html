@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Estimate 4G security camera SIM data for remote viewing and cloud uploads. Free bilingual calculator by Elechid.">
+<title>4G camera SIM data calculator | Elechid 音立</title>
+<style>
+:root { color: #152624; background: #edf4ef; font: 16px/1.55 system-ui,sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 60rem; margin: auto; padding: clamp(1rem,5vw,3.5rem); }
+header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+h1 { font-size: clamp(2rem,6vw,3.5rem); line-height: 1.08; letter-spacing: -.03em; margin-bottom: .4em; }
+p { max-width: 66ch; }
+form, .results { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,13rem),1fr)); gap: .8rem; margin-block: 1.5rem; }
+label, .results div { display: block; padding: .9rem 1rem; background: #fff; border: 1px solid #bbcfc4; border-radius: .75rem; }
+label { font-weight: 600; }
+input, button { font: inherit; color: inherit; border: 1px solid #58766a; border-radius: .4rem; background: #fff; padding: .45rem .65rem; }
+input { display: block; margin-top: .4rem; width: 100%; }
+button { cursor: pointer; }
+a { color: #075238; text-underline-offset: .17em; }
+output { display: block; font-size: 1.7rem; font-weight: 750; overflow-wrap: anywhere; }
+#error { color: #a42125; }
+</style>
+<script type="module" src="app.mjs"></script>
+</head>
+<body><main>
+<header><a id="brand" href="https://elechid.com/en/">Elechid 音立</a><button id="language" type="button" lang="zh-Hant">繁體中文</button></header>
+<h1 id="title">4G camera SIM data calculator</h1>
+<p id="intro">Estimate data for one billing period. Use the average bitrate and daily minutes for each type of traffic.</p>
+<form id="inputs">
+<label><span>Live viewing per camera (min/day)</span><input type="number" min="0" max="1440" value="10" step="any" required></label>
+<label><span>Live viewing bitrate (Mbps)</span><input type="number" min="0.001" max="100" value="2" step="any" required></label>
+<label><span>Separate clip uploads per camera (min/day)</span><input type="number" min="0" max="1440" value="5" step="any" required></label>
+<label><span>Clip upload bitrate (Mbps)</span><input type="number" min="0.001" max="100" value="1" step="any" required></label>
+<label><span>Cameras on the same data plan</span><input type="number" min="1" max="100" value="1" step="1" required></label>
+<label><span>Billing period (days)</span><input type="number" min="1" max="366" value="30" step="1" required></label>
+<label><span>Extra allowance (%)</span><input type="number" min="0" max="100" value="20" step="any" required></label>
+</form>
+<p id="error" role="status" hidden>Enter a valid value in each field.</p>
+<section class="results" aria-live="polite">
+<div><span>Remote live viewing</span><output>—</output></div>
+<div><span>Separate clip uploads</span><output>—</output></div>
+<div><span>Estimated total</span><output>—</output></div>
+<div><span>With extra allowance</span><output>—</output></div>
+</section>
+<p id="notes">Local recording to microSD uses no mobile data by itself. Remote playback of that recording does use data, so include it in remote viewing if using a similar bitrate. Count separate uploads only once. Notifications, firmware updates and network overhead can add usage. Check SIM usage after the first week and adjust the allowance. 1 GB = 1,000 MB.</p>
+<p><a id="guide" href="https://elechid.com/en/blogs/news/4g-camera-data-usage-sim-hong-kong">Elechid 4G camera and SIM guide</a> · <a id="source" href="https://github.com/Elechid/4g-camera-data-calculator">Source code</a></p>
+<noscript>JavaScript is required. 此工具需要 JavaScript。</noscript>
+</main></body></html>
