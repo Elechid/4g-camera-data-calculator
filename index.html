@@ -1,6 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Estimate 4G security camera SIM data for remote viewing and cloud uploads. Free bilingual calculator by Elechid.">
@@ -23,29 +21,30 @@ a { color: #075238; text-underline-offset: .17em; }
 output { display: block; font-size: 1.7rem; font-weight: 750; overflow-wrap: anywhere; }
 #error { color: #a42125; }
 </style>
-<script type="module" src="app.mjs"></script>
-</head>
+<script type="module" src="app.mjs?v=20261116"></script>
+<link rel="canonical" href="https://elechid.github.io/4g-camera-data-calculator/"><link rel="alternate" href="https://elechid.github.io/4g-camera-data-calculator/" hreflang="en-HK"><link rel="alternate" href="https://elechid.github.io/4g-camera-data-calculator/zh.html" hreflang="zh-Hant-HK"></head>
 <body><main>
 <header><a id="brand" href="https://elechid.com/en/">Elechid 音立</a><button id="language" type="button" lang="zh-Hant">繁體中文</button></header>
 <h1 id="title">4G camera SIM data calculator</h1>
-<p id="intro">Estimate data for one billing period. Use the average bitrate and daily minutes for each type of traffic.</p>
+<p id="intro">Estimate data for one billing period. Use the average bitrate and daily minutes for each type of traffic.</p><section><h2 data-example-en="How much SIM data does one 4G camera use in 30 days?" data-example-zh="一支 4G 攝影機 30 日要幾多 SIM 數據？">How much SIM data does one 4G camera use in 30 days?</h2><p data-example-en="At 2 Mbps, 10 minutes of remote viewing per day uses about 4.5 GB over 30 days. Separate uploads at 1 Mbps for 5 minutes daily add 1.125 GB. That gives 5.625 GB, or 6.75 GB with 20% headroom. Local microSD recording alone uses no mobile data. Compare the estimate with the first week’s SIM usage." data-example-zh="每日以 2 Mbps 遙距睇 10 分鐘，30 日約用 4.5 GB。另以 1 Mbps 每日上載 5 分鐘片段，多用約 1.125 GB，合共 5.625 GB。加 20% 預留後約 6.75 GB。只錄入本機 microSD 不會用流動數據，建議用首週 SIM 實際用量核對。">At 2 Mbps, 10 minutes of remote viewing per day uses about 4.5 GB over 30 days. Separate uploads at 1 Mbps for 5 minutes daily add 1.125 GB. That gives 5.625 GB, or 6.75 GB with 20% headroom. Local microSD recording alone uses no mobile data. Compare the estimate with the first week’s SIM usage.</p></section>
 <form id="inputs">
-<label><span>Live viewing per camera (min/day)</span><input type="number" min="0" max="1440" value="10" step="any" required></label>
-<label><span>Live viewing bitrate (Mbps)</span><input type="number" min="0.001" max="100" value="2" step="any" required></label>
-<label><span>Separate clip uploads per camera (min/day)</span><input type="number" min="0" max="1440" value="5" step="any" required></label>
-<label><span>Clip upload bitrate (Mbps)</span><input type="number" min="0.001" max="100" value="1" step="any" required></label>
-<label><span>Cameras on the same data plan</span><input type="number" min="1" max="100" value="1" step="1" required></label>
-<label><span>Billing period (days)</span><input type="number" min="1" max="366" value="30" step="1" required></label>
-<label><span>Extra allowance (%)</span><input type="number" min="0" max="100" value="20" step="any" required></label>
+<label><span>Live viewing per camera (min/day)</span><input type="number" min="0" max="1440" value="10" step="any" required=""></label>
+<label><span>Live viewing bitrate (Mbps)</span><input type="number" min="0.001" max="100" value="2" step="any" required=""></label>
+<label><span>Separate clip uploads per camera (min/day)</span><input type="number" min="0" max="1440" value="5" step="any" required=""></label>
+<label><span>Clip upload bitrate (Mbps)</span><input type="number" min="0.001" max="100" value="1" step="any" required=""></label>
+<label><span>Cameras on the same data plan</span><input type="number" min="1" max="100" value="1" step="1" required=""></label>
+<label><span>Billing period (days)</span><input type="number" min="1" max="366" value="30" step="1" required=""></label>
+<label><span>Extra allowance (%)</span><input type="number" min="0" max="100" value="20" step="any" required=""></label>
 </form>
-<p id="error" role="status" hidden>Enter a valid value in each field.</p>
+<p id="error" role="status" hidden="">Enter a valid value in each field.</p>
 <section class="results" aria-live="polite">
-<div><span>Remote live viewing</span><output>—</output></div>
-<div><span>Separate clip uploads</span><output>—</output></div>
-<div><span>Estimated total</span><output>—</output></div>
-<div><span>With extra allowance</span><output>—</output></div>
+<div><span>Remote live viewing</span><output>4.5 GB</output></div>
+<div><span>Separate clip uploads</span><output>1.125 GB</output></div>
+<div><span>Estimated total</span><output>5.625 GB</output></div>
+<div><span>With extra allowance</span><output>6.75 GB</output></div>
 </section>
 <p id="notes">Local recording to microSD uses no mobile data by itself. Remote playback of that recording does use data, so include it in remote viewing if using a similar bitrate. Count separate uploads only once. Notifications, firmware updates and network overhead can add usage. Check SIM usage after the first week and adjust the allowance. 1 GB = 1,000 MB.</p>
 <p><a id="guide" href="https://elechid.com/en/blogs/news/4g-camera-data-usage-sim-hong-kong">Elechid 4G camera and SIM guide</a> · <a id="source" href="https://github.com/Elechid/4g-camera-data-calculator">Source code</a></p>
-<noscript>JavaScript is required. 此工具需要 JavaScript。</noscript>
-</main></body></html>
+<noscript>Interactive calculation requires JavaScript.</noscript>
+<nav aria-label="Language and tool index"><a href="./" lang="en" hreflang="en">English</a> <a href="./zh.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="https://github.com/Elechid">Elechid tool index</a> </nav></main>
+</body></html>

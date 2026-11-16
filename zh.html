@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="zh-Hant"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="一支 4G 攝影機 30 日要幾多 SIM 數據？ 估算一個帳單週期的數據用量。請填入每種流量的平均碼率及每日使用時間。">
+<title>4G 攝影機 SIM 用量估算器 | Elechid 音立</title>
+<style>
+:root { color: #152624; background: #edf4ef; font: 16px/1.55 system-ui,sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 60rem; margin: auto; padding: clamp(1rem,5vw,3.5rem); }
+header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+h1 { font-size: clamp(2rem,6vw,3.5rem); line-height: 1.08; letter-spacing: -.03em; margin-bottom: .4em; }
+p { max-width: 66ch; }
+form, .results { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,13rem),1fr)); gap: .8rem; margin-block: 1.5rem; }
+label, .results div { display: block; padding: .9rem 1rem; background: #fff; border: 1px solid #bbcfc4; border-radius: .75rem; }
+label { font-weight: 600; }
+input, button { font: inherit; color: inherit; border: 1px solid #58766a; border-radius: .4rem; background: #fff; padding: .45rem .65rem; }
+input { display: block; margin-top: .4rem; width: 100%; }
+button { cursor: pointer; }
+a { color: #075238; text-underline-offset: .17em; }
+output { display: block; font-size: 1.7rem; font-weight: 750; overflow-wrap: anywhere; }
+#error { color: #a42125; }
+</style>
+<script type="module" src="app.mjs?v=20261116"></script>
+<link rel="canonical" href="https://elechid.github.io/4g-camera-data-calculator/zh.html"><link rel="alternate" href="https://elechid.github.io/4g-camera-data-calculator/" hreflang="en-HK"><link rel="alternate" href="https://elechid.github.io/4g-camera-data-calculator/zh.html" hreflang="zh-Hant-HK"></head>
+<body><main>
+<header><a id="brand" href="https://elechid.com/">Elechid 音立</a><button id="language" type="button" lang="en">English</button></header>
+<h1 id="title">4G 攝影機 SIM 用量估算器</h1>
+<p id="intro">估算一個帳單週期的數據用量。請填入每種流量的平均碼率及每日使用時間。</p><section><h2 data-example-en="How much SIM data does one 4G camera use in 30 days?" data-example-zh="一支 4G 攝影機 30 日要幾多 SIM 數據？">一支 4G 攝影機 30 日要幾多 SIM 數據？</h2><p data-example-en="At 2 Mbps, 10 minutes of remote viewing per day uses about 4.5 GB over 30 days. Separate uploads at 1 Mbps for 5 minutes daily add 1.125 GB. That gives 5.625 GB, or 6.75 GB with 20% headroom. Local microSD recording alone uses no mobile data. Compare the estimate with the first week’s SIM usage." data-example-zh="每日以 2 Mbps 遙距睇 10 分鐘，30 日約用 4.5 GB。另以 1 Mbps 每日上載 5 分鐘片段，多用約 1.125 GB，合共 5.625 GB。加 20% 預留後約 6.75 GB。只錄入本機 microSD 不會用流動數據，建議用首週 SIM 實際用量核對。">每日以 2 Mbps 遙距睇 10 分鐘，30 日約用 4.5 GB。另以 1 Mbps 每日上載 5 分鐘片段，多用約 1.125 GB，合共 5.625 GB。加 20% 預留後約 6.75 GB。只錄入本機 microSD 不會用流動數據，建議用首週 SIM 實際用量核對。</p></section>
+<form id="inputs">
+<label><span>每部鏡頭遙距觀看（分鐘／日）</span><input type="number" min="0" max="1440" value="10" step="any" required=""></label>
+<label><span>遙距觀看碼率（Mbps）</span><input type="number" min="0.001" max="100" value="2" step="any" required=""></label>
+<label><span>每部鏡頭另行上傳片段（分鐘／日）</span><input type="number" min="0" max="1440" value="5" step="any" required=""></label>
+<label><span>片段上傳碼率（Mbps）</span><input type="number" min="0.001" max="100" value="1" step="any" required=""></label>
+<label><span>共用同一數據計劃的鏡頭數</span><input type="number" min="1" max="100" value="1" step="1" required=""></label>
+<label><span>帳單週期（日）</span><input type="number" min="1" max="366" value="30" step="1" required=""></label>
+<label><span>預留額外用量（%）</span><input type="number" min="0" max="100" value="20" step="any" required=""></label>
+</form>
+<p id="error" role="status" hidden="">請在每一欄輸入有效數值。</p>
+<section class="results" aria-live="polite">
+<div><span>遙距觀看</span><output>4.5 GB</output></div>
+<div><span>另行上傳片段</span><output>1.125 GB</output></div>
+<div><span>估算總用量</span><output>5.625 GB</output></div>
+<div><span>連預留用量</span><output>6.75 GB</output></div>
+</section>
+<p id="notes">純粹錄影到 microSD 不會用流動數據。遙距回放會用數據，碼率相近時可把回放時間計入遙距觀看。另行上傳的片段只算一次。通知、韌體更新和網絡開銷會增加用量，建議首週查 SIM 實際用量再調整。1 GB = 1,000 MB。</p>
+<p><a id="guide" href="https://elechid.com/blogs/news/4g-camera-data-usage-sim-hong-kong">Elechid 4G 攝影機及 SIM 指南</a> · <a id="source" href="https://github.com/Elechid/4g-camera-data-calculator">原始碼</a></p>
+<noscript>互動計算需要 JavaScript。</noscript>
+<nav aria-label="語言及工具索引"><a href="./" lang="en" hreflang="en">English</a> <a href="./zh.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a> <a href="https://github.com/Elechid">Elechid 工具索引</a> </nav></main>
+</body></html>
